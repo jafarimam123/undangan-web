@@ -667,10 +667,15 @@
     <div class="cover" id="cover">
         <div class="cover-content">
             <h1>Walimatul 'Ursy</h1>
-            <p>Kepada Yth.</p>
-            <p id="guestName" style="font-size: 1.8rem; font-weight: 700; margin: 20px 0;">Tamu Undangan</p>
-            <p>Anda diundang ke pernikahan</p>
-            <p style="font-size: 1.5rem; font-weight: 600;">Amin & Aisyah</p>
+            
+            <!-- Box Kepada Yth dengan Border -->
+            <div style="border: 2px solid var(--accent-color); border-radius: 20px; padding: 30px 40px; margin: 30px auto; max-width: 500px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px);">
+                <p style="margin-bottom: 15px;">Kepada Yth.</p>
+                <p id="guestName" style="font-size: 1.8rem; font-weight: 700; margin: 20px 0;">Tamu Undangan</p>
+                <p style="margin-top: 15px;">Anda diundang ke pernikahan</p>
+                <p style="font-size: 1.5rem; font-weight: 600; margin-top: 20px;">Amin & Aisyah</p>
+            </div>
+            
             <button class="open-button" onclick="openInvitation()">
                 Buka Undangan
             </button>
