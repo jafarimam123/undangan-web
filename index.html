@@ -587,6 +587,7 @@
     </div>
 
     <!-- Audio Element -->
+    <!-- ===== EDIT URL MUSIK DI SINI ===== -->
     <audio id="bgMusic" loop>
         <source src="https://raw.githubusercontent.com/jafarimam123/undangan-web/main/uhayyikum.mp3" type="audio/mpeg">
     </audio>
@@ -616,10 +617,20 @@
         // Open Invitation
         function openInvitation() {
             document.getElementById('cover').classList.add('hidden');
-            music.play();
-            isPlaying = true;
-            musicButton.classList.add('playing');
-            musicButton.textContent = '⏸️';
+            
+            // Try to play with promise handling
+            const playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    isPlaying = true;
+                    musicButton.classList.add('playing');
+                    musicButton.textContent = '⏸️';
+                }).catch((error) => {
+                    console.log('Autoplay prevented:', error);
+                    // Music button tetap bisa diklik manual
+                });
+            }
         }
 
         // Countdown Timer
