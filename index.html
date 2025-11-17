@@ -617,20 +617,10 @@
         // Open Invitation
         function openInvitation() {
             document.getElementById('cover').classList.add('hidden');
-            
-            // Try to play with promise handling
-            const playPromise = music.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    isPlaying = true;
-                    musicButton.classList.add('playing');
-                    musicButton.textContent = '⏸️';
-                }).catch((error) => {
-                    console.log('Autoplay prevented:', error);
-                    // Music button tetap bisa diklik manual
-                });
-            }
+            music.play();
+            isPlaying = true;
+            musicButton.classList.add('playing');
+            musicButton.textContent = '⏸️';
         }
 
         // Countdown Timer
