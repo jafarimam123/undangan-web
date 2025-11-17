@@ -203,6 +203,90 @@
             margin: 0 auto;
         }
 
+        /* Couple Profile Section */
+        .couple-profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 115, 85, 0.05));
+            border-radius: 20px;
+            border: 2px solid var(--primary-color);
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid var(--primary-color);
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .profile-fullname {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .profile-parents {
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .profile-city {
+            margin-top: 10px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .ampersand {
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .couple-profile {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-name {
+                font-size: 1.6rem;
+            }
+
+            .ampersand {
+                font-size: 3rem;
+            }
+        }
+
         /* Event Details */
         .event-details {
             display: grid;
@@ -463,6 +547,46 @@
                 <div class="countdown-item">
                     <span class="number" id="seconds">0</span>
                     <span class="label">Detik</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Couple Profile Section -->
+        <div class="section">
+            <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 40px;">Mempelai</h2>
+            
+            <div class="couple-profile">
+                <!-- Mempelai Pria -->
+                <div class="profile-card">
+                    <div class="profile-image" style="background-image: url('https://via.placeholder.com/180'); background-size: cover; background-position: center;"></div>
+                    <h3 class="profile-name">Amin</h3>
+                    <p class="profile-fullname">Muhammad Amin, S.Kom</p>
+                    
+                    <div class="profile-info">
+                        <p class="profile-parents">
+                            Putra dari<br>
+                            <strong>Bapak Suryanto</strong> & <strong>Ibu Siti Maryam</strong>
+                        </p>
+                        <p class="profile-city">📍 Jakarta Selatan, DKI Jakarta</p>
+                    </div>
+                </div>
+
+                <!-- Ampersand -->
+                <div class="ampersand">&</div>
+
+                <!-- Mempelai Wanita -->
+                <div class="profile-card">
+                    <div class="profile-image" style="background-image: url('https://via.placeholder.com/180'); background-size: cover; background-position: center;"></div>
+                    <h3 class="profile-name">Aisyah</h3>
+                    <p class="profile-fullname">Aisyah Putri Ramadhani, S.Pd</p>
+                    
+                    <div class="profile-info">
+                        <p class="profile-parents">
+                            Putri dari<br>
+                            <strong>Bapak Ahmad Hidayat</strong> & <strong>Ibu Fatimah</strong>
+                        </p>
+                        <p class="profile-city">📍 Surabaya, Jawa Timur</p>
+                    </div>
                 </div>
             </div>
         </div>
