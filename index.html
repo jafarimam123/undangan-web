@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
+    <title>Undangan Pernikahan - Amin & Aisyah</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -43,7 +43,7 @@
             height: 100%;
             object-fit: cover;
             /* ===== EDIT URL GAMBAR LATAR BELAKANG DI BAWAH ===== */
-            background-image: url('https://acaranya.id/storage/2024/08/8ec64c826c0aac02c547a4835518e660.jpg');
+            background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -515,12 +515,9 @@
         <div class="section">
             <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 30px;">Konfirmasi Kehadiran</h2>
             
-            <!-- Netlify Forms: tambahkan atribut name, netlify, dan data-netlify="true" -->
             <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleRSVP(event)">
-                <!-- Hidden field untuk Netlify -->
                 <input type="hidden" name="form-name" value="rsvp" />
                 
-                <!-- Honeypot untuk anti-spam -->
                 <p style="display: none;">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                 </p>
@@ -564,7 +561,6 @@
                 <button type="submit" class="submit-button">Kirim Konfirmasi</button>
             </form>
 
-            <!-- Success Message (akan muncul setelah submit) -->
             <div id="success-message" style="display: none; text-align: center; padding: 30px; background: #d4edda; color: #155724; border-radius: 10px; margin-top: 20px;">
                 <h3>✅ Terima Kasih!</h3>
                 <p>Konfirmasi kehadiran Anda telah kami terima.</p>
@@ -591,9 +587,8 @@
     </div>
 
     <!-- Audio Element -->
-    <!-- ===== EDIT URL MUSIK DI SINI ===== -->
     <audio id="bgMusic" loop>
-        <source src="https://raw.githubusercontent.com/jafarimam123/undangan-fulan-fulanah/main/Nasyid%20uhayyikum%20%D8%A7%D8%AD%D9%8A%D9%8A%D9%83%D9%85-mc.mp3" type="audio/mpeg">
+        <source src="./uhayyikum.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -650,11 +645,34 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // RSVP Form Handler
+        // RSVP Form Handler untuk Netlify Forms
         function handleRSVP(event) {
             event.preventDefault();
-            alert('Terima kasih! Konfirmasi kehadiran Anda telah diterima. 🙏');
-            event.target.reset();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Kirim data ke Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Tampilkan pesan sukses
+                form.style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                
+                // Scroll ke pesan sukses
+                document.getElementById('success-message').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            })
+            .catch((error) => {
+                alert('Maaf, terjadi kesalahan. Silakan coba lagi.');
+                console.error('Error:', error);
+            });
         }
 
         // Smooth Scroll Animation
