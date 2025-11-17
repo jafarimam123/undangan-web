@@ -206,87 +206,78 @@
         /* Couple Profile Section */
         .couple-profile {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr auto 1fr;
             gap: 30px;
             margin-top: 40px;
+            align-items: center;
         }
 
         .profile-card {
             text-align: center;
-            padding: 30px;
+            padding: 40px 30px;
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 115, 85, 0.05));
             border-radius: 20px;
             border: 2px solid var(--primary-color);
         }
 
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 5px solid var(--primary-color);
-            object-fit: cover;
-            background: #e0e0e0;
-        }
-
         .profile-name {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
             margin-bottom: 10px;
         }
 
         .profile-fullname {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-dark);
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .profile-info {
             color: var(--text-light);
-            line-height: 1.8;
-            font-size: 0.95rem;
+            line-height: 2;
+            font-size: 1rem;
         }
 
         .profile-parents {
-            margin: 15px 0;
-            font-style: italic;
+            margin: 20px 0;
+        }
+
+        .profile-parents strong {
+            color: var(--secondary-color);
         }
 
         .profile-city {
-            margin-top: 10px;
+            margin-top: 15px;
             color: var(--secondary-color);
             font-weight: 500;
+            font-size: 1.05rem;
         }
 
-        .ampersand {
+        .ampersand-divider {
             text-align: center;
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
+            font-size: 5rem;
             color: var(--primary-color);
-            margin: 20px 0;
+            padding: 0 20px;
         }
 
         @media (max-width: 768px) {
             .couple-profile {
                 grid-template-columns: 1fr;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
+                gap: 20px;
             }
 
             .profile-name {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
-            .ampersand {
-                font-size: 3rem;
+            .ampersand-divider {
+                font-size: 3.5rem;
+                padding: 10px 0;
             }
         }
-
         /* Event Details */
         .event-details {
             display: grid;
@@ -558,39 +549,39 @@
             <div class="couple-profile">
                 <!-- Mempelai Pria -->
                 <div class="profile-card">
-                    <div class="profile-image" style="background-image: url('https://via.placeholder.com/180'); background-size: cover; background-position: center;"></div>
                     <h3 class="profile-name">Amin</h3>
                     <p class="profile-fullname">Muhammad Amin, S.Kom</p>
                     
                     <div class="profile-info">
-                        <p class="profile-parents">
+                        <div class="profile-parents">
                             Putra dari<br>
-                            <strong>Bapak Suryanto</strong> & <strong>Ibu Siti Maryam</strong>
-                        </p>
+                            <strong>Bapak Suryanto</strong><br>
+                            & <strong>Ibu Siti Maryam</strong>
+                        </div>
                         <p class="profile-city">📍 Jakarta Selatan, DKI Jakarta</p>
                     </div>
                 </div>
 
-                <!-- Ampersand -->
-                <div class="ampersand">&</div>
+                <!-- Ampersand Divider -->
+                <div class="ampersand-divider">&</div>
 
                 <!-- Mempelai Wanita -->
                 <div class="profile-card">
-                    <div class="profile-image" style="background-image: url('https://via.placeholder.com/180'); background-size: cover; background-position: center;"></div>
                     <h3 class="profile-name">Aisyah</h3>
                     <p class="profile-fullname">Aisyah Putri Ramadhani, S.Pd</p>
                     
                     <div class="profile-info">
-                        <p class="profile-parents">
+                        <div class="profile-parents">
                             Putri dari<br>
-                            <strong>Bapak Ahmad Hidayat</strong> & <strong>Ibu Fatimah</strong>
-                        </p>
+                            <strong>Bapak Ahmad Hidayat</strong><br>
+                            & <strong>Ibu Fatimah</strong>
+                        </div>
                         <p class="profile-city">📍 Surabaya, Jawa Timur</p>
                     </div>
                 </div>
             </div>
         </div>
-
+        
         <!-- Quote Section -->
         <div class="section">
             <p class="quote">
