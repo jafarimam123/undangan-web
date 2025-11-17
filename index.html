@@ -433,8 +433,6 @@
             <button class="open-button" onclick="openInvitation()">
                 Buka Undangan
             </button>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -680,6 +678,28 @@
 
         // Smooth Scroll Animation
         document.addEventListener('DOMContentLoaded', function() {
+            // Get Guest Name from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestParam = urlParams.get('to') || urlParams.get('id') || urlParams.get('nama');
+            
+            if (guestParam) {
+                // Decode dan format nama (replace underscore/dash dengan spasi, capitalize)
+                const decodedName = decodeURIComponent(guestParam);
+                const formattedName = decodedName
+                    .replace(/[_-]/g, ' ')
+                    .split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                    .join(' ');
+                
+                document.getElementById('guestName').textContent = formattedName;
+                
+                // Auto-fill nama di form RSVP
+                const namaInput = document.querySelector('input[name="nama"]');
+                if (namaInput) {
+                    namaInput.value = formattedName;
+                }
+            }
+            
             const sections = document.querySelectorAll('.section');
             
             const observer = new IntersectionObserver((entries) => {
@@ -691,8 +711,7 @@
                 });
             }, { threshold: 0.1 });
 
-            sections.forEach(section => {
-                section.style.opacity = '0';
+            sections.forEach(section => {                section.style.opacity = '0';
                 section.style.transform = 'translateY(30px)';
                 section.style.transition = 'opacity 0.8s, transform 0.8s';
                 observer.observe(section);
