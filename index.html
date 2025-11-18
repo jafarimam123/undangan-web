@@ -449,6 +449,50 @@
             }
         }
 
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -465,6 +509,54 @@
             to {
                 transform: rotate(360deg);
             }
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Animation Classes */
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .animate-float {
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+            opacity: 0;
+            animation-fill-mode: forwards;
         }
 
         /* Responsive */
@@ -676,7 +768,7 @@
                 <p style="font-size: 1.5rem; font-weight: 600; margin-top: 20px;">Amin & Aisyah</p>
                 
                 <!-- Logo AA -->
-                <div style="margin-top: 25px; animation: pulse 2s infinite;">
+                <div style="margin-top: 25px;" class="animate-float">
                     <img src="https://raw.githubusercontent.com/jafarimam123/undangan-web/main/Logo%20AA.png" 
                          alt="Logo AA" 
                          style="width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(255,255,255,0.3));">
@@ -701,19 +793,19 @@
             
             <!-- Countdown -->
             <div class="countdown" id="countdown">
-                <div class="countdown-item">
+                <div class="countdown-item animate-scale-in">
                     <span class="number" id="days">0</span>
                     <span class="label">Hari</span>
                 </div>
-                <div class="countdown-item">
+                <div class="countdown-item animate-scale-in delay-1">
                     <span class="number" id="hours">0</span>
                     <span class="label">Jam</span>
                 </div>
-                <div class="countdown-item">
+                <div class="countdown-item animate-scale-in delay-2">
                     <span class="number" id="minutes">0</span>
                     <span class="label">Menit</span>
                 </div>
-                <div class="countdown-item">
+                <div class="countdown-item animate-scale-in delay-3">
                     <span class="number" id="seconds">0</span>
                     <span class="label">Detik</span>
                 </div>
@@ -726,7 +818,7 @@
             
             <div class="couple-profile">
                 <!-- Mempelai Pria -->
-                <div class="profile-card">
+                <div class="profile-card animate-fade-in-left">
                     <h3 class="profile-name">Muhammad Amin</h3>
                     <p class="profile-fullname"></p>
                     
@@ -741,10 +833,10 @@
                 </div>
 
                 <!-- Ampersand Divider -->
-                <div class="ampersand-divider">&</div>
+                <div class="ampersand-divider animate-scale-in delay-1">&</div>
 
                 <!-- Mempelai Wanita -->
-                <div class="profile-card">
+                <div class="profile-card animate-fade-in-right delay-2">
                     <h3 class="profile-name">Aisyah</h3>
                     <p class="profile-fullname"></p>
                     
@@ -762,7 +854,7 @@
         
         <!-- Quote Section -->
         <div class="section">
-            <p class="quote">
+            <p class="quote animate-fade-in-left">
                 "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
                 <br><br>
                 <strong>- QS. Ar-Rum: 21 -</strong>
@@ -774,7 +866,7 @@
             <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 40px;">Detail Acara</h2>
             
             <div class="event-details">
-                <div class="event-card">
+                <div class="event-card animate-slide-up">
                     <h3>Akad Nikah & Resepsi</h3>
                     <div class="event-info">
                         <strong>📅 Akad Nikah:</strong>
@@ -838,7 +930,7 @@
                 </div>
                 
                 <!-- Arabic Doa Image -->
-                <div style="text-align: center; margin: 30px 0;">
+                <div style="text-align: center; margin: 30px 0;" class="animate-scale-in">
                     <img src="https://raw.githubusercontent.com/jafarimam123/undangan-web/main/baarakalla2h.png" 
                          alt="Doa Pengantin" 
                          style="max-width: 100%; height: auto; width: 450px; display: inline-block;">
@@ -930,7 +1022,7 @@
         <div class="section">
             <h2 style="text-align: center; font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 30px;">Konfirmasi Kehadiran</h2>
             
-            <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleRSVP(event)">
+            <form class="rsvp-form animate-slide-up" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleRSVP(event)">
                 <input type="hidden" name="form-name" value="rsvp" />
                 
                 <p style="display: none;">
@@ -991,7 +1083,7 @@
             <br>
             
             <!-- Gambar Jazakumullah Khairan -->
-            <div style="margin: 30px auto; max-width: 500px;">
+            <div style="margin: 30px auto; max-width: 500px;" class="animate-scale-in">
                 <img src="https://raw.githubusercontent.com/jafarimam123/undangan-web/main/jazakumullah.jpg" 
                      alt="Jazakumullahu Khairan" 
                      style="width: 100%; max-width: 450px; height: auto; display: block; margin: 0 auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);">
