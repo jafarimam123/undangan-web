@@ -71,12 +71,16 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            transition: opacity 0.8s, visibility 0.8s;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out, transform 1.2s ease-in-out;
         }
 
         .cover.hidden {
             opacity: 0;
             visibility: hidden;
+            transform: scale(0.95);
+            pointer-events: none;
         }
 
         .cover-content {
@@ -124,6 +128,14 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-in-out 0.3s, transform 1s ease-in-out 0.3s;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section {
@@ -1133,11 +1145,25 @@
 
         // Open Invitation
         function openInvitation() {
+            // Fade out cover
             document.getElementById('cover').classList.add('hidden');
+            
+            // Fade in main content setelah delay
+            setTimeout(() => {
+                document.querySelector('.main-content').classList.add('visible');
+            }, 300);
+            
+            // Play music
             music.play();
             isPlaying = true;
             musicButton.classList.add('playing');
             musicButton.textContent = '⏸️';
+            
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
 
         // Countdown Timer
