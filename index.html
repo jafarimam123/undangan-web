@@ -26,6 +26,8 @@
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             background: #f5f5f5;
+            width: 100%;
+            max-width: 100vw;
         }
 
         /* Background Section */
@@ -87,6 +89,9 @@
             text-align: center;
             color: #3d2817;
             padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .cover h1 {
@@ -134,6 +139,44 @@
             margin-top: 15px;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
             border: 2px solid rgba(61, 40, 23, 0.3);
+        }
+
+        /* Cover Invitation Box */
+        .cover-invitation-box {
+            border: 4px solid rgba(212, 175, 55, 0.85);
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin: 30px auto;
+            max-width: 500px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(184, 147, 67, 0.2));
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .cover-guest-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: #3d2817;
+        }
+
+        .cover-couple-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #3d2817;
+        }
+
+        .cover-logo-wrapper {
+            margin-top: 25px;
+        }
+
+        .cover-logo-image {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(255,255,255,0.3));
+            animation: floatAnimation 3s ease-in-out infinite;
         }
 
         /* Main Content */
@@ -652,6 +695,30 @@
                 font-size: 2.5rem;
             }
 
+            .cover p {
+                font-size: 1rem;
+            }
+
+            /* Cover Invitation Box Mobile */
+            .cover-invitation-box {
+                padding: 20px 25px;
+                margin: 20px 15px;
+                border-width: 3px;
+            }
+
+            .cover-guest-name {
+                font-size: 1.5rem;
+            }
+
+            .cover-couple-name {
+                font-size: 1.2rem;
+            }
+
+            .cover-logo-image {
+                width: 90px;
+                height: 90px;
+            }
+
             .hero h2 {
                 font-size: 2.5rem;
             }
@@ -660,8 +727,13 @@
                 font-size: 1.8rem;
             }
 
+            .countdown {
+                gap: 10px;
+            }
+
             .countdown-item {
                 min-width: 70px;
+                padding: 15px 10px;
             }
 
             .countdown-item .number {
@@ -692,11 +764,20 @@
             
             .event-info {
                 font-size: 0.95rem;
+                line-height: 1.6;
             }
 
             /* Arrival Time Box Mobile */
+            .arrival-time-box {
+                padding: 15px 20px;
+            }
+
             .arrival-time-box .time {
                 font-size: 1.5rem;
+            }
+
+            .arrival-time-box .label {
+                font-size: 0.85rem;
             }
             
             /* Doa Section Mobile */
@@ -730,20 +811,42 @@
                 font-size: 1rem;
                 padding: 10px 25px;
             }
+
+            /* Main Content Mobile */
+            .main-content {
+                padding: 10px;
+            }
         }
         
         @media (max-width: 480px) {
             /* Extra Small Screens */
             .cover h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .cover p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
-            
-            #guestName {
-                font-size: 1.5rem !important;
+
+            /* Cover Invitation Box Extra Small */
+            .cover-invitation-box {
+                padding: 15px 20px;
+                margin: 15px 10px;
+                border-width: 2px;
+                border-radius: 15px;
+            }
+
+            .cover-guest-name {
+                font-size: 1.3rem !important;
+            }
+
+            .cover-couple-name {
+                font-size: 1.1rem !important;
+            }
+
+            .cover-logo-image {
+                width: 70px;
+                height: 70px;
             }
             
             .open-button {
@@ -752,32 +855,36 @@
             }
             
             .hero {
-                padding: 60px 20px;
+                padding: 40px 15px;
             }
             
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .couple-names {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
             
             .date {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             
+            .countdown {
+                gap: 8px;
+            }
+
             .countdown-item {
-                min-width: 60px;
-                padding: 15px;
+                min-width: 65px;
+                padding: 12px 8px;
             }
             
             .countdown-item .number {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             
             .countdown-item .label {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
             
             .profile-name {
@@ -789,23 +896,49 @@
             }
             
             .quote {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                padding: 0 10px;
             }
             
+            .section {
+                padding: 30px 15px;
+                margin: 15px 0;
+            }
+
             .section h2 {
                 font-size: 1.3rem !important;
             }
             
+            .event-card {
+                padding: 15px;
+            }
+
             .event-card h3 {
                 font-size: 1.3rem;
             }
 
+            .event-info {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            /* Arrival Time Box Extra Small */
+            .arrival-time-box {
+                padding: 12px 15px;
+                margin: 15px 0;
+            }
+
             .arrival-time-box .time {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .arrival-time-box .label {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
+            }
+
+            .time-badge {
+                font-size: 0.9rem;
+                padding: 8px 18px;
             }
             
             .map-button {
@@ -816,18 +949,55 @@
             /* Doa Image Mobile */
             .section img[alt="Doa Pengantin"] {
                 width: 100% !important;
-                max-width: 300px !important;
+                max-width: 280px !important;
+            }
+
+            /* Form Extra Small */
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                font-size: 0.9rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            .submit-button {
+                font-size: 0.95rem;
+                padding: 12px;
             }
             
             /* Footer Mobile */
             .footer {
-                padding: 30px 20px;
-                font-size: 0.9rem;
+                padding: 25px 15px;
+                font-size: 0.85rem;
             }
 
-            .time-badge {
-                font-size: 0.95rem;
-                padding: 10px 20px;
+            .footer p {
+                margin: 3px 0;
+            }
+
+            /* Music Button Extra Small */
+            .music-player {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .music-button {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+
+            /* Main Content Extra Small */
+            .main-content {
+                padding: 5px;
             }
         }
     </style>
@@ -845,11 +1015,11 @@
             <h1>Walimatul 'Ursy</h1>
             
             <!-- Box Kepada Yth dengan Border -->
-            <div style="border: 4px solid rgba(212, 175, 55, 0.85); border-radius: 20px; padding: 30px 40px; margin: 30px auto; max-width: 500px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(184, 147, 67, 0.2)); backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 25px rgba(212, 175, 55, 0.15);">
+            <div class="cover-invitation-box">
                 <p style="margin-bottom: 15px; color: #3d2817;">Kepada Yth.</p>
-                <p id="guestName" style="font-size: 1.8rem; font-weight: 700; margin: 20px 0; color: #3d2817;">Tamu Undangan</p>
+                <p id="guestName" class="cover-guest-name">Tamu Undangan</p>
                 <p style="margin-top: 15px; color: #3d2817;">Anda diundang ke pernikahan</p>
-                <p style="font-size: 1.5rem; font-weight: 600; margin-top: 20px; color: #3d2817;">Amin & Aisyah</p>
+                <p class="cover-couple-name">Amin & Aisyah</p>
                 
                 <!-- Waktu Kedatangan yang Diharapkan -->
                 <div id="expectedArrivalCover" style="display: none; margin-top: 25px;">
@@ -860,10 +1030,10 @@
                 </div>
                 
                 <!-- Logo AA -->
-                <div style="margin-top: 25px;" class="animate-float">
+                <div class="cover-logo-wrapper">
                     <img src="https://raw.githubusercontent.com/jafarimam123/undangan-web/main/logo%20AA%20arab%203.png" 
                          alt="Logo AA" 
-                         style="width: 120px; height: 120px; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(255,255,255,0.3));">
+                         class="cover-logo-image">
                 </div>
             </div>
             
